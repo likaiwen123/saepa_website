@@ -39,14 +39,14 @@ export default {
   },
   methods: {
     backTop() {
-      let top = document.body.scrollTop;
+      let top = window.scrollY;
       const timer = setInterval(() => {
         top -= Math.abs(top * this.speed);
         if (top <= 1) {
           top = 0;
           clearInterval(timer);
         }
-        document.body.scrollTop = top;
+        window.scrollTo(0, top);
       }, 20);
       return false;
     },
